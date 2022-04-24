@@ -8,6 +8,7 @@
 # Remember to comment and document all processes to show understanding of each step, especially where you may be following a tutorial
 
 import csv
+from os import set_handle_inheritable
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -26,24 +27,25 @@ for row in petal:
 
 testarr = np.array(test)
 
+# creates a set filter for each variable
+set_filter = petal[:,2]=="setosa"
+ver_filter = petal[:,2]=="versicolor"
+vir_filter = petal[:,2]=="virginica"
 
+# uses above filter to create standalone dataset for each variable
+set_data = petal[set_filter]
+ver_data = petal[ver_filter]
+vir_data = petal[vir_filter]
 
-print(testarr) 
-filter_arr = petal[:,2]=="virginica"
+print(set_data) 
 
-print(filter_arr)
-
-x_axis = testarr[:,0]
-y_axis = testarr[:,1]
+x_axis = set_data[:,0]
+y_axis = set_data[:,1]
 
 # can plot multiple items in one file
 
 plt.scatter(x_axis,y_axis)
 plt.show()
-
-finalfilter = petal[filter_arr]
-
-print(finalfilter)
 
 # file to create summary of sepal_length
 # number of records, max of each, min of each, mean of each, printout of all items

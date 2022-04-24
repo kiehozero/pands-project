@@ -15,4 +15,4 @@ A repository for the final project in GMIT Programming and Scripting 2022
 For isolating specific columns in a numPy array: https://www.statology.org/numpy-get-column/
 For reading CSV files in matplotlib: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
 For plotting items by group: https://www.w3schools.com/python/matplotlib_scatter.asp
-For filtering with pandas: https://www.tutorialspoint.com/filter-the-rows-python-pandas
+For filtering with pandas: https://www.tutorialspoint.com/filter-the-rows-python-pandas and https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
