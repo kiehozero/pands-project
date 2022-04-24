@@ -16,16 +16,11 @@ import pandas as pd
 iris_csv = pd.read_csv("iris.csv")
 
 iris_csv = np.array(iris_csv)
-# selects only PL and Species columns
-petal = iris_csv[1:, [2,3,4]]
-# selects all data for Virginica species, need appending to a list to use as data points, make into a function, loop through species name to
-# create unique dataset for each, then another function that loops through each dataset to create scatters to overlay each other
-test = []
-for row in petal:
-    if row[2] == "virginica":
-        test.append(list(row))
 
-testarr = np.array(test)
+# CREATION OF SCATTER TO COMPARE PETAL VARIABLES
+
+# selects only petal and species columns
+petal = iris_csv[1:, [2,3,4]]
 
 # creates a set filter for each variable
 set_filter = petal[:,2]=="setosa"
@@ -37,15 +32,39 @@ set_data = petal[set_filter]
 ver_data = petal[ver_filter]
 vir_data = petal[vir_filter]
 
-print(set_data) 
-
-x_axis = set_data[:,0]
-y_axis = set_data[:,1]
+# x and y variables f, definitely could loop the creation of these
+x_set = set_data[:,0]
+y_set = set_data[:,1]
+x_ver = ver_data[:,0]
+y_ver = ver_data[:,1]
+x_vir = vir_data[:,0]
+y_vir = vir_data[:,1]
 
 # can plot multiple items in one file
 
-plt.scatter(x_axis,y_axis)
+plt.scatter(x_set,y_set, marker="^")
+plt.scatter(x_ver,y_ver, marker="o")
+plt.scatter(x_vir,y_vir, marker="x")
 plt.show()
+
+# CREATION OF SCATTER TO COMPARE SEPAL VARIABLES (sepal_length vs sepal_width)
+
+# selects only sepal and species columns
+sepal = iris_csv[1:, [0,1,4]]
+
+# CREATION OF SCATTER TO COMPARE LENGTH VARIABLES (sepal_length vs petal_length)
+
+# CREATION OF SCATTER TO COMPARE WIDTH VARIABLES (sepal_width vs petal_width)
+
+# USE SUBPLOTS (README) TO PLOT SCATTERS ON ONE PAGE
+
+# histogram sepal_length
+
+# histogram sepal_width
+
+# histogram petal_length
+
+# histogram petal_width
 
 # file to create summary of sepal_length
 # number of records, max of each, min of each, mean of each, printout of all items
@@ -58,23 +77,3 @@ plt.show()
 
 # file to create summary of petal_width
 # number of records, max of each, min of each, mean of each, printout of all items
-
-# histogram sepal_length
-
-# histogram sepal_width
-
-# histogram petal_length
-
-# histogram petal_width
-
-# scatter sepal_l vs sepal_w
-
-# scatter sepal_l vs petal_l
-
-# scatter sepal_l vs petal_w
-
-# scatter petal_l vs petal_w
-
-# scatter petal_l vs sepal_w
-
-# scatter sepal_w vs petal_w
