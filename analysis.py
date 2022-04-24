@@ -7,19 +7,17 @@
 # The last point is what will make the project stand out, the first three are the minimum requirements
 # Remember to comment and document all processes to show understanding of each step, especially where you may be following a tutorial
 
-import csv
-from os import set_handle_inheritable
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+# file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
-
 iris_csv = np.array(iris_csv)
 
 # CREATION OF SCATTER TO COMPARE PETAL VARIABLES
 
-# selects only petal and species columns
+# selects only petal and species columns, might need to add the header data back in here to allow for graph titles
 petal = iris_csv[1:, [2,3,4]]
 
 # creates a set filter for each variable
