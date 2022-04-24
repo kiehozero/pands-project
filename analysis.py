@@ -9,9 +9,15 @@
 
 import csv
 import numpy as np
+import pandas as pd
 
-with open("iris.csv", "r") as d:
-    iris_csv = list(csv.reader(d, delimiter=","))
+iris_csv = list(csv.reader(open("iris.csv", "r"), delimiter=","))
 
 iris_csv = np.array(iris_csv)
-print(iris_csv)
+# selects only PL and Species columns
+pet_len = iris_csv[:, [2,4]]
+print(pet_len)
+# selects all data for Virginica species
+for row in iris_csv:
+    if row[4] == "virginica":
+        print(row)
