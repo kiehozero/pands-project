@@ -17,33 +17,33 @@ iris_csv = np.array(iris_csv)
 
 # CREATION OF SCATTER TO COMPARE PETAL VARIABLES
 
-# selects only petal and species columns, might need to add the header data back in here to allow for graph titles
-petal = iris_csv[1:, [2,3,4]]
-
 # creates a set filter for each variable
-set_filter = petal[:,2]=="setosa"
-ver_filter = petal[:,2]=="versicolor"
-vir_filter = petal[:,2]=="virginica"
+set_filter = iris_csv[:,4]=="setosa"
+ver_filter = iris_csv[:,4]=="versicolor"
+vir_filter = iris_csv[:,4]=="virginica"
 
 # uses above filter to create standalone dataset for each variable
-set_data = petal[set_filter]
-ver_data = petal[ver_filter]
-vir_data = petal[vir_filter]
+set_data = iris_csv[set_filter]
+ver_data = iris_csv[ver_filter]
+vir_data = iris_csv[vir_filter]
 
 # x and y variables f, definitely could loop the creation of these
-x_set = set_data[:,0]
-y_set = set_data[:,1]
-x_ver = ver_data[:,0]
-y_ver = ver_data[:,1]
-x_vir = vir_data[:,0]
-y_vir = vir_data[:,1]
+x_set = set_data[:,2]
+y_set = set_data[:,3]
+x_ver = ver_data[:,2]
+y_ver = ver_data[:,3]
+x_vir = vir_data[:,2]
+y_vir = vir_data[:,3]
 
 # can plot multiple items in one file
 
-plt.scatter(x_set,y_set, marker="^")
-plt.scatter(x_ver,y_ver, marker="o")
-plt.scatter(x_vir,y_vir, marker="x")
+plt.scatter(x_set,y_set, marker="x", color="#d55e00", label="setosa")
+plt.scatter(x_ver,y_ver, marker="o", color="#0072b2", label="versicolor")
+plt.scatter(x_vir,y_vir, marker="^", color="#f0e442", label="virginica")
+plt.legend(title="Species")
+plt.title(label="Comparison of petal variables of three iris species", loc="center")
 plt.show()
+# plt.savefig(FILENAME HERE)
 
 # CREATION OF SCATTER TO COMPARE SEPAL VARIABLES (sepal_length vs sepal_width)
 
