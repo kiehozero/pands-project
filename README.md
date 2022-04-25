@@ -1,14 +1,26 @@
 # pands-project
 A repository for the final project in GMIT Programming and Scripting 2022
 
-# Dataset background
+# Dataset background and previous findings
 
 Background, information, general findings, mention the fact that one of the best ways of distinguishing the species isn't actually using petal or sepal data at all, but seed data (see article here https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5), proving the cardinal rule that correlation does not equal causation, and just because a parttern between variables has been detected, it does not necessarily mean that any of those variables or the relationships between them caused it
+Discuss https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_dataset_scatterplot.svg and how that is an example of pairplot in 
 
-# Methodology and working notes
+# Libraries Used
+- numPY
+- Pandas
+- Matplotlib
+- Seaborn
+
+# Operation of code
+- analysis.py - main script to fulfill project requirements
+- distribution.py - explanation of box-and-whisker, interactive element, ease of using seaborn
+- pairplot.py - This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library.
 
 # Bugfixes
 1. The first bug I encountered was when I was attempting to plot from a CSV file. the csv.reader() function was bringing in the lengths and widths as strings instead of floating-point numbers, so it wasn't plotting the points in value order, but rather in the order that each entry was within the CSV file. I didn't find an exact solution to rectify this in csv.reader(), but going to a basic [matplotlib tutorial](https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib) provided the read_csv() that corrected the problem.
+
+# Potential improvements
 
 # References
 

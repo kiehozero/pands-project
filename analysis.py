@@ -27,13 +27,13 @@ set_data = iris_csv[set_filter]
 ver_data = iris_csv[ver_filter]
 vir_data = iris_csv[vir_filter]
 
-# x and y variables f, definitely could loop the creation of these
-x_set = set_data[:,2]
-y_set = set_data[:,3]
-x_ver = ver_data[:,2]
-y_ver = ver_data[:,3]
-x_vir = vir_data[:,2]
-y_vir = vir_data[:,3]
+# x and y variables for each set, definitely could loop the creation of these
+x_set = set_data[0:,2]
+y_set = set_data[0:,3]
+x_ver = ver_data[0:,2]
+y_ver = ver_data[0:,3]
+x_vir = vir_data[0:,2]
+y_vir = vir_data[0:,3]
 
 # can plot multiple items in one file
 
