@@ -5,7 +5,6 @@
 # 3. Output a scatter plot for each pair of variables
 # 4. Performs any other analysis you think is appropriate
 # The last point is what will make the project stand out, the first three are the minimum requirements
-# Remember to comment and document all processes to show understanding of each step, especially where you may be following a tutorial
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -65,7 +64,7 @@ sepal = iris_csv[1:, [0,1,4]]
 # histogram petal_width
 
 # file to create summary of sepal_length
-# number of records, max of each, min of each, mean of each, printout of all items
+# number of records, max of each, min of each, mean of each, printout of all items, mnost of these are built-in functions in python, could be worth exploring numpy/math functions
 
 # file to create summary of sepal_width
 # number of records, max of each, min of each, mean of each, printout of all items
