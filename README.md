@@ -35,7 +35,7 @@ All analysis within this project was undertaken using Python, specifically the b
 ## Operation of code
 - analysis.py - main script to fulfil project requirements
 - distribution.py - explanation of box-and-whisker, interactive element, ease of using seaborn
-- pairplot.py - This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library.
+- pairplot.py - This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
 
 ## Bug and fixes
 1. The first bug I encountered was when I was attempting to plot from a CSV file. the csv.reader() function was bringing in the lengths and widths as strings instead of floating-point numbers, so it wasn't plotting the points in value order, but rather in the order that each entry was within the CSV file. I didn't find an exact solution to rectify this in csv.reader(), but going to a basic [matplotlib tutorial](https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib) provided the read_csv() that corrected the problem.
@@ -45,20 +45,20 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ## References
 
-For isolating specific columns in a numPy array: https://www.statology.org/numpy-get-column/
-For reading CSV files in matplotlib: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
-General matplotlib basics: https://www.w3schools.com/python/matplotlib_intro.asp
-For plotting items by group: https://www.w3schools.com/python/matplotlib_scatter.asp
-For filtering with pandas: https://www.tutorialspoint.com/filter-the-rows-python-pandas and https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
-Subplots: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
-Context on dataset: Yong Cui, https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5  (2020)
-Colour-blind-friendly colour palette: https://www.color-hex.com/color-palette/49436
-Matplotlib docs for general function and parameter queries: https://matplotlib.org/3.5.1/index.html
-Seaborn tutorial:
-Saving files in a new location: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
-Host repo for data: https://archive.ics.uci.edu/ml/datasets/iris (1988)
-Iris debate: Poissot, T. (2020), [Armchair Ecology](https://armchairecology.blog/iris-dataset/
-[matplotlib](https://matplotlib.org/)
-[numPy](https://numpy.org/pand)
-[Pandas](https://pandas.pydata.org/)
-[seaborn](https://seaborn.pydata.org/)
+- For isolating specific columns in a numPy array: https://www.statology.org/numpy-get-column/
+- For reading CSV files in matplotlib: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
+- General matplotlib basics: https://www.w3schools.com/python/matplotlib_intro.asp
+- For plotting items by group: https://www.w3schools.com/python/matplotlib_scatter.asp
+- For filtering with pandas: https://www.tutorialspoint.com/filter-the-rows-python-pandas and https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+- Subplots: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
+- Context on dataset: Yong Cui, https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5  (2020)
+- Colour-blind-friendly colour palette: https://www.color-hex.com/color-palette/49436
+- Matplotlib docs for general function and parameter queries: https://matplotlib.org/3.5.1/index.html
+- [Seaborn tutorial](https://www.askpython.com/python-modules/python-seaborn-tutorial) 
+- Saving files in a new location: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
+- Host repo for data: https://archive.ics.uci.edu/ml/datasets/iris (1988)
+- Iris debate: Poissot, T. (2020), [Armchair Ecology](https://armchairecology.blog/iris-dataset/
+- [matplotlib](https://matplotlib.org/)
+- [numPy](https://numpy.org/pand)
+- [Pandas](https://pandas.pydata.org/)
+- [seaborn](https://seaborn.pydata.org/)
