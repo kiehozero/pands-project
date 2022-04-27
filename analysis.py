@@ -14,8 +14,6 @@ import pandas as pd
 iris_csv = pd.read_csv("iris.csv")
 iris_csv = np.array(iris_csv)
 
-# CREATION OF SCATTER TO COMPARE PETAL VARIABLES
-
 # creates a set filter for each variable
 set_filter = iris_csv[:,4]=="setosa"
 ver_filter = iris_csv[:,4]=="versicolor"
@@ -25,6 +23,8 @@ vir_filter = iris_csv[:,4]=="virginica"
 set_data = iris_csv[set_filter]
 ver_data = iris_csv[ver_filter]
 vir_data = iris_csv[vir_filter]
+
+# CREATION OF SCATTER TO COMPARE PETAL VARIABLES
 
 # x and y variables for each set, definitely could loop the creation of these
 x_set = set_data[0:,2]
@@ -44,7 +44,8 @@ plt.title(label="Comparison of petal variables of three iris species", loc="cent
 plt.show()
 # plt.savefig(FILENAME HERE)
 
-# should there be a single function for all scatters, with the inputs being the required ranges?
+# should there be a single function for all scatters, with the inputs being the required ranges rather than creating new sets 
+# over and over, could then make a function where the two axes variables are passed in from a user input
 
 # CREATION OF SCATTER TO COMPARE SEPAL VARIABLES (sepal_length vs sepal_width)
 
@@ -64,15 +65,3 @@ sepal = iris_csv[1:, [0,1,4]]
 # histogram petal_length
 
 # histogram petal_width
-
-# file to create summary of sepal_length
-# number of records, max of each, min of each, mean of each, printout of all items, mnost of these are built-in functions in python, could be worth exploring numpy/math functions
-
-# file to create summary of sepal_width
-# number of records, max of each, min of each, mean of each, printout of all items
-
-# file to create summary of petal_length
-# number of records, max of each, min of each, mean of each, printout of all items
-
-# file to create summary of petal_width
-# number of records, max of each, min of each, mean of each, printout of all items
