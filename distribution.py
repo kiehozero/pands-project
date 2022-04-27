@@ -7,7 +7,12 @@ import seaborn as sns
 # file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
 
-userInput = int(input("Select a variable from the list to view its distribution (1: petal_length, 2: petal_width, 3: sepal_length, 4: sepal_width): "))
+# function to create and plot a box-and-whisker chart. The split function is introduced to print the name of the variable without the underscore
+def plotter(userInput):
+    sns.boxplot(x="species", y=varIndex[userInput], data=iris_csv)
+    splitName = varIndex[userInput].split("_")
+    plt.title(label=f"Distribution of {splitName[0]} {splitName[1]} by species")
+    plt.savefig(f"dist_{varIndex[userInput]}.png")
 
 # assigns each variable a value, with the user-selected item to be defined as the y-axis in the resulting box-and-whisker
 varIndex = {
@@ -17,9 +22,7 @@ varIndex = {
     4: "sepal_width"
     }
 
-# option to use swarmplot or boxplot here
+# input for user to select which variable they wish to see
+userInput = int(input("Select a variable from the list to view its distribution (1: petal_length, 2: petal_width, 3: sepal_length, 4: sepal_width): "))
 
-sns.swarmplot(x="species", y=varIndex[userInput], data=iris_csv)
-plt.title(label=f"Distribution of {varIndex[userInput]} by species")
-plt.show()
-# plt.savefig(FILENAME HERE)
+plotter(userInput)
