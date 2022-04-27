@@ -44,6 +44,8 @@ plt.title(label="Comparison of petal variables of three iris species", loc="cent
 plt.show()
 # plt.savefig(FILENAME HERE)
 
+# should there be a single function for all scatters, with the inputs being the required ranges?
+
 # CREATION OF SCATTER TO COMPARE SEPAL VARIABLES (sepal_length vs sepal_width)
 
 # selects only sepal and species columns
