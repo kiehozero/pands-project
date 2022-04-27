@@ -33,9 +33,9 @@ All analysis within this project was undertaken using Python, specifically the b
 - [seaborn](https://seaborn.pydata.org/) - The website describes this library as, "a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 
 ## Operation of code
-- analysis.py - main script to fulfil project requirements
-- distribution.py - explanation of box-and-whisker, interactive element, ease of using seaborn
-- pairplot.py - This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
+- [analysis](analysis.py) - main script to fulfil project requirements
+- [distribution](distribution.py) - explanation of box-and-whisker, interactive element, ease of using seaborn
+- [pairplot](pairplot.py) - This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
 
 ## Bug and fixes
 1. The first bug I encountered was when I was attempting to plot from a CSV file. the csv.reader() function was bringing in the lengths and widths as strings instead of floating-point numbers, so it wasn't plotting the points in value order, but rather in the order that each entry was within the CSV file. I didn't find an exact solution to rectify this in csv.reader(), but going to a basic [matplotlib tutorial](https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib) provided the read_csv() that corrected the problem.
@@ -45,20 +45,42 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ## References
 
-- For isolating specific columns in a numPy array: https://www.statology.org/numpy-get-column/
-- For reading CSV files in matplotlib: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
-- General matplotlib basics: https://www.w3schools.com/python/matplotlib_intro.asp
-- For plotting items by group: https://www.w3schools.com/python/matplotlib_scatter.asp
-- For filtering with pandas: https://www.tutorialspoint.com/filter-the-rows-python-pandas and https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
-- Subplots: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
-- Context on dataset: Yong Cui, https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5  (2020)
-- Colour-blind-friendly colour palette: https://www.color-hex.com/color-palette/49436
-- Matplotlib docs for general function and parameter queries: https://matplotlib.org/3.5.1/index.html
-- [Seaborn tutorial](https://www.askpython.com/python-modules/python-seaborn-tutorial) 
-- Saving files in a new location: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
-- Host repo for data: https://archive.ics.uci.edu/ml/datasets/iris (1988)
-- Iris debate: Poissot, T. (2020), [Armchair Ecology](https://armchairecology.blog/iris-dataset/
-- [matplotlib](https://matplotlib.org/)
-- [numPy](https://numpy.org/pand)
-- [Pandas](https://pandas.pydata.org/)
-- [seaborn](https://seaborn.pydata.org/)
+Isolating specific columns in a numPy array:
+- Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
+
+Reading CSV files in matplotlib:
+- Tutorial Points (n.d.) Plot data from CSV file with Matplotlib. URL: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
+- W3Schools (n.d.) Matplotlib Tutorial. URL: https://www.w3schools.com/python/matplotlib_intro.asp
+
+Plotting items by group:
+- W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
+
+Filtering with pandas: 
+- Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
+- Python and R Tips (2018) How To Filter Pandas Dataframe By Values of Column? URL: https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+
+Subplots:
+- GeeksforGeeks (2021) Plot multiple plots in Matplotlib. URL: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
+
+Context on dataset:
+- Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5.
+
+Colour-blind-friendly colour palette: 
+- Color Hex (n.d.) color-blind-friendly Color Palette. URL: https://www.color-hex.com/color-palette/49436
+
+Seaborn tutorial
+- AskPython (2020) Python Seaborn Tutorial. URL: https://www.askpython.com/python-modules/python-seaborn-tutorial
+
+Saving files in a new location:
+ 
+- Stack Overflow (2012) filesystems - Python: how do I save a file in a different directory? URL: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
+
+Data source:
+Machine Learning Repository: Iris Data Set (1988) University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
+Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
+
+General documentation:
+- Matplotlib (n.d.) Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/3.5.1/index.html
+- NumPy (n.d.) Overview — NumPy v1.19 Manual. URL: https://numpy.org/doc/stable/
+- Pandas (n.d.) pandas 1.0.1 documentation. URL: https://pandas.pydata.org/docs/
+- Seaborn (2012) statistical data visualization — seaborn 0.9.0 documentation. URL: https://seaborn.pydata.org/

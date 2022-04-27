@@ -8,12 +8,15 @@ import seaborn as sns
 # file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
 
-# function to create and plot a box-and-whisker chart. The split function is introduced to print the name of the variable without the underscore
+# function to create and plot a box-and-whisker chart
 def plotter(userInput):
     # needs error handling for values that aren't between 1 and 4, see previous lectures
     sns.boxplot(x="species", y=varIndex[userInput], data=iris_csv)
+    # The split function is introduced to print the name of the variable without the underscore
     splitName = varIndex[userInput].split("_")
     plt.title(label=f"Distribution of {splitName[0]} {splitName[1]} by species")
+    # saves a filename that includes the user's selected variable name to a child directory of the current directory
+    # this method of generating a unique filename and saving it to a separate location both came from a StackOverflow article in the README
     filename = f"dist_{varIndex[userInput]}.png"
     path = "./images/"
     filepath = os.path.join(path, filename)
