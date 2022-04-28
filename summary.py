@@ -8,12 +8,12 @@ import seaborn as sns
 # file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
 
-# number of records, max of each, min of each, mean of each, printout of all items, mnost of these are built-in functions in python, could be worth exploring numpy/math functions
+# number of records, max, min, mean, range, printout of all items, most of these are built-in functions in python, could be worth exploring numpy/math functions
 
 # creates a set filter for each variable
-set_filter = iris_csv[:,4]=="setosa"
-ver_filter = iris_csv[:,4]=="versicolor"
-vir_filter = iris_csv[:,4]=="virginica"
+set_filter = iris_csv["species"]=="setosa"
+ver_filter = iris_csv["species"]=="versicolor"
+vir_filter = iris_csv["species"]=="virginica"
 
 # uses above filter to create standalone dataset for each variable
 set_data = iris_csv[set_filter]
