@@ -12,12 +12,11 @@ import pandas as pd
 
 # file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
-iris_csv = np.array(iris_csv)
 
 # creates a set filter for each variable
-set_filter = iris_csv[:,4]=="setosa"
-ver_filter = iris_csv[:,4]=="versicolor"
-vir_filter = iris_csv[:,4]=="virginica"
+set_filter = iris_csv["species"]=="setosa"
+ver_filter = iris_csv["species"]=="versicolor"
+vir_filter = iris_csv["species"]=="virginica"
 
 # uses above filter to create standalone dataset for each variable
 set_data = iris_csv[set_filter]
@@ -27,12 +26,12 @@ vir_data = iris_csv[vir_filter]
 # CREATION OF SCATTER TO COMPARE PETAL VARIABLES
 
 # x and y variables for each set, definitely could loop the creation of these
-x_set = set_data[0:,2]
-y_set = set_data[0:,3]
-x_ver = ver_data[0:,2]
-y_ver = ver_data[0:,3]
-x_vir = vir_data[0:,2]
-y_vir = vir_data[0:,3]
+x_set = set_data["petal_length"]
+y_set = set_data["petal_width"]
+x_ver = ver_data["petal_length"]
+y_ver = ver_data["petal_width"]
+x_vir = vir_data["petal_length"]
+y_vir = vir_data["petal_width"]
 
 # can plot multiple items in one file
 
