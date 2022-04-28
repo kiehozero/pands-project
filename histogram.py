@@ -23,7 +23,7 @@ vir_data = iris_csv[vir_filter]
 # input for user to select which variable they wish to see
 userInput = int(input("Select a variable from the list to view its distribution (0: sepal length, 1: sepal width, 2: petal length, 3: petal width): "))
 
-# one histogram per variable, plotted on a single chart
+# one histogram per species, plotted on a single chart
 plt.hist(set_data[0:,userInput], alpha=0.5, edgecolor="black", label="setosa")
 plt.hist(ver_data[0:,userInput], alpha=0.5, edgecolor="blue", label="versicolor")
 plt.hist(vir_data[0:,userInput], alpha=0.5, edgecolor="green", label="virginica")
