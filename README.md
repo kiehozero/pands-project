@@ -15,14 +15,25 @@ There is also an argument, summarised nicely by Timothée Poisot at [Armchair Ec
 
 The data itself consists of the length and width of two separate parts of an iris flower, the petal and the sepal. Fisher and his research partner Anderson measured 150 individuals plants, and these are divided evenly between three species of iris: setosa, versicolor and virginica. The overall conclusion of the data as presented by Fisher was that while one species, iris setosa, can be distinguished from the others by assessing any of the four variables presented, there are varying degrees of uncertainty between iris versicolor and iris virginica.
 
-## Findings 
+## Methodology and Findings
 
 As expected, there will be no ground-breaking contribution to the fields of botany or biology within this GitHub repository. Within my initial investigations, a [scatter plot](https://en.wikipedia.org/wiki/Iris_flower_data_set) on the dataset's Wikipedia page provided a compact summary of this data, which I have attempted to reproduce in the [pairplot](pairplot.py) program. >>> Description of seaborn process, this was actually the last task I accomplished.
 
-findings arising from [analysis](analysis.py)
+### Findings arising from [analysis](analysis.py)
 
-findings arising from [distribution](distribution.py)
+>>>
 
+### Findings arising from [histogram](histogram.py)
+
+Using guidance from the initial project brief, I then attempted to create a histogram that would display the distribution of measurements by variable. Similar to analysis.py, I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder. The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particular when plotting sepal data.
+
+### Findings arising from [distribution](distribution.py)
+
+>>>
+
+### Findings arising from [summary](summary.pp)
+
+>>>
 
 ## Software Packages
 
@@ -45,43 +56,42 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ## References
 
-Isolating specific columns in a numPy array:
+### Isolating specific columns in a numPy array:
 - Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
 
-Reading CSV files in matplotlib:
+### Reading CSV files in matplotlib:
 - Tutorial Points (n.d.) Plot data from CSV file with Matplotlib. URL: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
 - W3Schools (n.d.) Matplotlib Tutorial. URL: https://www.w3schools.com/python/matplotlib_intro.asp
 
-Plotting items by group:
+### Plotting items by group:
 - W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
 
-Filtering with pandas: 
-- Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
+### Filtering with pandas: 
 - Python and R Tips (2018) How To Filter Pandas Dataframe By Values of Column? URL: https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+- Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
 
-Subplots:
+### Subplots:
 - GeeksforGeeks (2021) Plot multiple plots in Matplotlib. URL: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
 
-Formatting plots:
+### Formatting plots:
+- GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/
 - Matplotlib (n.d.) matplotlib.pyplot.ylabel — Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html
-Context on dataset:
-- Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5.
 
-Colour-blind-friendly colour palette: 
+### Colour-blind-friendly colour palette: 
 - Color Hex (n.d.) color-blind-friendly Color Palette. URL: https://www.color-hex.com/color-palette/49436
 
-Seaborn tutorial
+### Seaborn tutorial
 - AskPython (2020) Python Seaborn Tutorial. URL: https://www.askpython.com/python-modules/python-seaborn-tutorial
 
-Saving files in a new location:
- 
+### Saving files in a new location:
 - Stack Overflow (2012) filesystems - Python: how do I save a file in a different directory? URL: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
 
-Data source and context:
+### Data source and context:
+- Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 - Machine Learning Repository: Iris Data Set (1988) University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
 - Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
 
-General documentation:
+### General documentation:
 - Matplotlib (n.d.) Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/3.5.1/index.html
 - NumPy (n.d.) Overview — NumPy v1.19 Manual. URL: https://numpy.org/doc/stable/
 - Pandas (n.d.) pandas 1.0.1 documentation. URL: https://pandas.pydata.org/docs/
