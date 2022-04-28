@@ -10,6 +10,7 @@ iris_csv = pd.read_csv("iris.csv")
 
 sns.pairplot(data=iris_csv, hue="species")
 plt.legend()
+# saves image to a different directory
 filename = "pairplot.png"
 path = "./images/"
 filepath = os.path.join(path, filename)
