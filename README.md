@@ -19,21 +19,25 @@ The data itself consists of the length and width of two separate parts of an iri
 
 As expected, there will be no ground-breaking contribution to the fields of botany or biology within this GitHub repository. Within my initial investigations, a [scatter plot](https://en.wikipedia.org/wiki/Iris_flower_data_set) on the dataset's Wikipedia page provided a compact summary of this data, which I have attempted to reproduce in the [pairplot](pairplot.py) program. >>> Description of seaborn process, this was actually the last task I accomplished.
 
-### Findings arising from [analysis](analysis.py)
-
->>>
 
 ### Findings arising from [histogram](histogram.py)
 
-Using guidance from the initial project brief, I then attempted to create a histogram that would display the distribution of measurements by variable. Similar to analysis.py, I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder. The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particular when plotting sepal data.
+Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder. The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particular when plotting sepal data.
+
+### Findings arising from [scatter](scatter.py)
+
+>>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. Similar to [histogram](histogram.py), uses an input to determine whether to scatter the petal or sepal variables
+>>> setosa easily identifiable based on petals, with minimal overlap between virginica and versicolor, strong correlation between length and width of latter two, not so much for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
 
 ### Findings arising from [distribution](distribution.py)
 
 >>>
 
-### Findings arising from [summary](summary.pp)
+### Findings arising from [summary](summary.py)
 
 >>>
+
+### Findings arising from [pairplot](pairplot.py)
 
 ## Software Packages
 
