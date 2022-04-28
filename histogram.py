@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os.path
 import pandas as pd
-import seaborn as sns
 
 # file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
