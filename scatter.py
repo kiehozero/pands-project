@@ -34,7 +34,7 @@ y_ver = ver_data[f"{userInput}_width"]
 x_vir = vir_data[f"{userInput}_length"]
 y_vir = vir_data[f"{userInput}_width"]
 
-# one histogram per species, plotted on a single chart
+# one scatter per species, plotted on a single chart
 # the colour selection was chosen using the Color Hex colour-blindness guide in the README
 plt.scatter(x_set,y_set, marker="x", color="#d55e00", label="setosa")
 plt.scatter(x_ver,y_ver, marker="o", color="#0072b2", label="versicolor")
