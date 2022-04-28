@@ -32,9 +32,16 @@ varIndex = {
 # input for user to select which variable they wish to see
 userInput = int(input("Select a variable from the list to view its distribution (0: sepal length, 1: sepal width, 2: petal length, 3: petal width): "))
 
-plt.hist(set_data[0:,userInput])
-plt.hist(ver_data[0:,userInput])
-plt.hist(vir_data[0:,userInput])
+# one histogram per variable, plotted on a single chart
+plt.hist(set_data[0:,userInput], alpha=0.5, edgecolor="red", label="setosa")
+plt.hist(ver_data[0:,userInput], alpha=0.5, edgecolor="blue", label="versicolor")
+plt.hist(vir_data[0:,userInput], alpha=0.5, edgecolor="green", label="virginica")
 plt.title(f"Distribution of {varIndex[userInput]} by species")
 plt.legend()
-plt.show()
+
+# saves a filename that includes the user's selected variable name to a child directory of the current directory
+# this method of generating a unique filename and saving it to a separate location both came from a StackOverflow article in the README
+filename = f"hist_{varIndex[userInput]}.png"
+path = "./images/"
+filepath = os.path.join(path, filename)
+plt.savefig(filepath)
