@@ -26,7 +26,6 @@ def plotter(userInput):
         plt.savefig(filepath)
     else:
         print("Please choose a number between 1 and 4")
-
 # assigns each variable a value, with the user-selected item to be defined as the y-axis in the resulting box-and-whisker
 varIndex = {
     1: "petal_length",
@@ -36,6 +35,8 @@ varIndex = {
     }
 
 # input for user to select which variable they wish to see
-userInput = int(input("Select a variable from the list to view its distribution (1: petal length, 2: petal width, 3: sepal length, 4: sepal width): "))
-
-plotter(userInput)
+try:
+    userInput = int(input("Select a variable from the list to view its distribution (1: petal length, 2: petal width, 3: sepal length, 4: sepal width): "))
+    plotter(userInput)
+except ValueError:
+    print("Please choose a number between 1 and 4")

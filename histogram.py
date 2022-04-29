@@ -27,7 +27,7 @@ plt.hist(set_data[0:,userInput], alpha=0.5, edgecolor="black", label="setosa")
 plt.hist(ver_data[0:,userInput], alpha=0.5, edgecolor="blue", label="versicolor")
 plt.hist(vir_data[0:,userInput], alpha=0.5, edgecolor="green", label="virginica")
 
-# a dictionary of varible names for use in the title of the plot amd the saved filename
+# a dictionary of variable names for use in the title of the plot amd the saved filename
 # if you want these in the same order as in distribution.py, you'll need to add headers back into the filtered items, then you'll be able to reference
 varIndex = {
     0: "sepal_length",

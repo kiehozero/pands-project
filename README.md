@@ -15,33 +15,37 @@ There is also an argument, summarised nicely by Timothée Poisot at [Armchair Ec
 
 The data itself consists of the length and width of two separate parts of an iris flower, the petal and the sepal. Fisher and his research partner Anderson measured 150 individuals plants, and these are divided evenly between three species of iris: setosa, versicolor and virginica. The overall conclusion of the data as presented by Fisher was that while one species, iris setosa, can be distinguished from the others by assessing any of the four variables presented, there are varying degrees of uncertainty between iris versicolor and iris virginica.
 
-## Methodology and Findings
+## Working Notes
 
-As expected, there will be no ground-breaking contribution to the fields of botany or biology within this GitHub repository. Within my initial investigations, a [scatter plot](https://en.wikipedia.org/wiki/Iris_flower_data_set) on the dataset's Wikipedia page provided a compact summary of this data, which I have attempted to reproduce in the [pairplot](pairplot.py) program. >>> Description of seaborn process, this was actually the last task I accomplished.
+### Findings
 
+As expected, there will be no ground-breaking contribution to the fields of botany or biology within this GitHub repository. Within my initial investigations, a [scatter plot](https://en.wikipedia.org/wiki/Iris_flower_data_set) on the dataset's Wikipedia page provided a compact summary of this data, which I have attempted to reproduce in the [pairplot](pairplot.py) program.
 
-### Findings arising from [histogram](histogram.py)
+The various charts contained show that the subspecies setosa is easily identifiable based on petals, with minimal overlap between virginica and versicolor. This is also strong correlation between length and width of latter two, with weaker correlation for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
 
-Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder. The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particular when plotting sepal data.
+### [histogram](histogram.py) methodology
 
-### Findings arising from [distribution](distribution.py)
+Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder.
 
->>> Creating a box-and-whisker graph largely resolved the visibility issues that the [histogram](histogram.py) presented, displaying the three species without overlap on a variable-by-variable bases. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn. Similar to [histogram](histogram.py), uses an input to determine whether to display the desired variable, but I have packages the processes of plotting and saving the graphs within a function; hopefully this will mean that converting this to loop through the list of variables would be a simpler task.
+The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particularly when plotting sepal data.
 
-### Findings arising from [scatter](scatter.py)
+### [distribution](distribution.py) methodology
 
+Creating a box-and-whisker graph largely resolved the visibility issues that the [histogram](histogram.py) presented, displaying the three species without overlap on a variable-by-variable bases. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn, offering the chance to use a package not covered in the course.
+
+Similar to [histogram](histogram.py), this program uses an input to determine the displayed variable, but packages the processes of plotting and saving the graphs within a function. Unlike the histogram, the box-and-whisker can sub-divide data based using a third variable, in this case the species, so while much of the underlying code is similar, there is no need to separate the data into three subsets before plotting onto separate charts. The boxplot function simply takes this in as an axis variable, allowing complete separation between data, but still allowing for easy comparison due to the lack of overlaid information. 
+
+The petal charts confirm the distinct petal variables of the setosa mentioned about in the Findings section, as well as the slight overlap between virginia and versicolor petals. The box-and-whisker also plots outlying data as individual points; setosa contains the most of these, but they still fall relatively close to the other setosa measurements, and never overlap within the expected ranges of the other species.
+
+### [scatter](scatter.py) methodology
 A scatter graph allowed for the plotting of measurements based on both dimensions, as well as all unique measurements to be displayed
 >>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. 
->>> setosa easily identifiable based on petals, with minimal overlap between virginica and versicolor, strong correlation between length and width of latter two, not so much for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
+>>> 
 
-
-
-### Findings arising from [summary](summary.py)
-
+### [summary](summary.py) methodology
 >>>
 
-### Findings arising from [pairplot](pairplot.py)
-
+### [pairplot](pairplot.py) methodology
 >>>
 
 ## Software Packages
@@ -50,7 +54,7 @@ All analysis within this project was undertaken using Python, specifically the b
 - [matplotlib](https://matplotlib.org/) - The website describes this library as, "a comprehensive library for creating static, animated, and interactive visualizations in Python."
 - [numPy](https://numpy.org/pand) - The website describes this library as, "The fundamental package for scientific computing with Python."
 - [pandas](https://pandas.pydata.org/) - The website describes this library as, "a fast, powerful, flexible and easy to use open source data analysis and manipulation tool."
-- [seaborn](https://seaborn.pydata.org/) - The website describes this library as, "a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
+- [seaborn](https://seaborn.pydata.org/) - The website describes this library as, "a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics."
 
 ## Operation of code
 - [analysis](analysis.py) - main script to fulfil project requirements
