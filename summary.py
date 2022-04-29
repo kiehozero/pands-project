@@ -9,25 +9,20 @@ import seaborn as sns
 iris_csv = pd.read_csv("iris.csv")
 
 # file to write summary data to
-file_to = "summary.txt"
+file_to = "outputs/summary.txt"
 
 # number of records, max, min, mean, range, printout of all items, most of these are built-in functions in python, could be worth exploring numpy/math functions
 
-# creates a set filter for each variable
-set_filter = iris_csv["species"]=="setosa"
-ver_filter = iris_csv["species"]=="versicolor"
-vir_filter = iris_csv["species"]=="virginica"
-
-# uses above filter to create standalone dataset for each variable
-set_data = iris_csv[set_filter]
-ver_data = iris_csv[ver_filter]
-vir_data = iris_csv[vir_filter]
+# standalone dataset for each variable, method came from the Tutorials Point link in the README
+set_data = iris_csv[iris_csv["species"]=="setosa"]
+ver_data = iris_csv[iris_csv["species"]=="versicolor"]
+vir_data = iris_csv[iris_csv["species"]=="virginica"]
 
 max_ver = str(max(ver_data["sepal_width"]))
 
 with open(file_to,"at") as f:
 
-    f.write(max_ver)
+    f.write(f"{max_ver}")
 
 # with open(file_to,"r") as f:
 
