@@ -24,20 +24,25 @@ As expected, there will be no ground-breaking contribution to the fields of bota
 
 Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder. The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particular when plotting sepal data.
 
+### Findings arising from [distribution](distribution.py)
+
+>>> Creating a scatter graph largely resolved the visibility issues that the [histogram](histogram.py) presented
+
 ### Findings arising from [scatter](scatter.py)
 
+A scatter graph allowed for the plotting of measurements based on both dimensions, as well as all unique measurements to be displayed
 >>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. Similar to [histogram](histogram.py), uses an input to determine whether to scatter the petal or sepal variables
 >>> setosa easily identifiable based on petals, with minimal overlap between virginica and versicolor, strong correlation between length and width of latter two, not so much for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
 
-### Findings arising from [distribution](distribution.py)
 
->>>
 
 ### Findings arising from [summary](summary.py)
 
 >>>
 
 ### Findings arising from [pairplot](pairplot.py)
+
+>>>
 
 ## Software Packages
 
@@ -54,9 +59,10 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ## Bug and fixes
 1. The first bug I encountered was when I was attempting to plot from a CSV file. the csv.reader() function was bringing in the lengths and widths as strings instead of floating-point numbers, so it wasn't plotting the points in value order, but rather in the order that each entry was within the CSV file. I didn't find an exact solution to rectify this in csv.reader(), but going to a basic [matplotlib tutorial](https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib) provided the read_csv() that corrected the problem.
-2. "No handles with labels found to put in legend" - doesn't seem to affect the operation of pairplot.py
+2. When the [pairplot](pairplot.py) program runs, everything operates as planned but the warning message "No handles with labels found to put in legend" is printed to the terminal. When I got this on other plots it was because I had added a legend but not given any labels; adding labels to the seaborn pairplot function results in an unexepected keyword argument error, so I have reverted the code back to the earlier warning message instead.
 
 ## Potential improvements
+1. The analysis in [distribution](distribution.py) could be developed further by plotting the count of measurements as a size variable. At present, if the length and width of two or more measurements are identical, they are plotted in the same position. Using the count as a size variable here on a bubble chart would display clustered measurements in a more dynamic way than simply overlapping them.
 
 ## References
 
