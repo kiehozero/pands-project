@@ -9,7 +9,7 @@ import pandas as pd
 iris_csv = pd.read_csv("iris.csv")
 iris_csv = np.array(iris_csv)
 
-# creates a set filter for each variable, method came from the Tutorials Point link in the README
+# creates a filter for each variable, method came from the Tutorials Point link in the README
 set_filter = iris_csv[:,4]=="setosa"
 ver_filter = iris_csv[:,4]=="versicolor"
 vir_filter = iris_csv[:,4]=="virginica"
@@ -44,7 +44,7 @@ try:
         # saves a filename that includes the user's selected variable name (from the dictionary above) to a child directory of the current directory
         # this method of generating a unique filename and saving it to a separate location both came from a StackOverflow article in the README
         filename = f"hist_{varIndex[userInput]}.png"
-        path = "./images/"
+        path = "./outputs/"
         filepath = os.path.join(path, filename)
         plt.title(f"Distribution of {varIndex[userInput]} by species")
         plt.legend()

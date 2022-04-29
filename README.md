@@ -29,13 +29,13 @@ The various charts contained show that the subspecies setosa is easily identifia
 
 ### [Histogram](histogram.py) methodology
 
-Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder.
+Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the outputs sub-folder.
 
 The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particularly when plotting sepal data. Overlapping ranges on the histograms are of the most detriment where data is most concentrated, in the case of sepal width this is in the 2.5cm-3.5cm range.
 
 ### [Distribution](distribution.py) methodology
 
-Creating a box-and-whisker graph largely resolved the visibility issues that the histogram presented, displaying the three species without overlap on a variable-by-variable basis. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn. Seaborn is both a package that has plenty of simple tutorials online, and also was not covered in the course material.
+Creating a box-and-whisker graph largely resolved the visibility issues that the histogram presented, displaying the three species without overlap on a variable-by-variable basis. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn. Seaborn is both a package that has plenty of simple tutorials online, and also was not covered in the course material. After this, and as with the histogram, a filename is determined based on the user selection, and os.path.join is used to add the completed plot to the outputs sub-folder.
 
 Similar to the histogram this program uses an input to determine the displayed variable, but packages the processes of plotting and saving the graphs within a function. Unlike the histogram, the box-and-whisker can sub-divide data based using a third variable, in this case the species, so while much of the underlying code is similar, there is no need to separate the data into three subsets before plotting onto separate charts. The boxplot function simply takes this in as an axis variable, allowing complete separation between data, but still allowing for easy comparison due to the lack of overlaid information. 
 
@@ -43,11 +43,13 @@ The petal charts confirm the distinct dimensions of the setosa mentioned above, 
 
 ### [Scatter](scatter.py) methodology
 
-Unlike either the histogram or the box-and-whisker chart, a scatter graph allows for the plotting of measurements based on multiple dimensions, as well more unique measurements to be displayed together. This view generally provides a better view of data ranges where there may be overlapping measurements within the virginica and versicolor sets, provided you choose the icons and colours carefully to avoid conflicts.
+Unlike either the histogram or the box-and-whisker chart, a scatter graph allows for the plotting of measurements based on multiple dimensions, as well more unique measurements to be displayed together. This view generally provides a better view of data ranges where there may be overlapping measurements within the virginica and versicolor sets, provided you choose the icons and colours carefully to avoid conflicts. The disadvantage of this view is that it is initially difficult to establish the central quartile of each dataset, unlike the boxplot where it is a core feature of the function.
+
+Similar to the histogram program, the scatter program works by filtering the original dataset and creating a new one for each species. A user input then determines whether to create a scatter or sepal or petal data, and a length and width dataset for each species is creating using the input to determine which column to select. The two datasets for each species are then added to a scatter plot, and the three plots are added to the same visual. Lastly, a filename is determined based on the user selection, and os.path.join is used to add the completed plot to the outputs sub-folder.
 
 ### [Summary](summary.py) methodology
 
->>> Prints a collection of 
+>>> This programs offers a selection of data relevant to the dataset, segmented by species, using Python's built-in mathematical functions.
 
 ### [Pair-plot](pairplot.py) methodology
 
@@ -77,7 +79,7 @@ All analysis within this project was undertaken using Python, specifically the b
 
 1. The analysis in [scatter](scatter.py) could be developed further by plotting the count of measurements as a size variable. At present, if the length and width of two or more measurements are identical, they are plotted in the same position. Using the count as a size variable here on a bubble chart would display clustered measurements in a more dynamic way than simply overlapping them.
 
-2. I wanted to use a loop in [distribution](distribution.py) to loop through the varIndex range, thus creating all four charts simultaneously rather than asking a user to select a particular chart. I attempted to create this but could only get the code the generate four charts, with the first containing only the first variable, but with the fourth containing all four variable. I have included the [png](images/dist_error.png) to better explain the output. I think looping all of these files would ultimately be preferable to a user than having to repeat the process multiple times.
+2. I wanted to use a loop in [distribution](distribution.py) to loop through the varIndex range, thus creating all four charts simultaneously rather than asking a user to select a particular chart. I attempted to create this but could only get the code the generate four charts, with the first containing only the first variable, but with the fourth containing all four variable. I have included the [png](outputs/dist_error.png) to better explain the output. I think looping all of these files would ultimately be preferable to a user than having to repeat the process multiple times.
 
 
 ## References

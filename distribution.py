@@ -21,11 +21,12 @@ def plotter(userInput):
         # saves a filename that includes the user's selected variable name to a child directory of the current directory
         # this method of generating a unique filename and saving it to a separate location both came from a StackOverflow article in the README
         filename = f"dist_{varIndex[userInput]}.png"
-        path = "./images/"
+        path = "./outputs/"
         filepath = os.path.join(path, filename)
         plt.savefig(filepath)
     else:
         print("Please choose a number between 1 and 4")
+
 # assigns each variable a value, with the user-selected item to be defined as the y-axis in the resulting box-and-whisker
 varIndex = {
     1: "petal_length",

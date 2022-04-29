@@ -15,6 +15,6 @@ plt.legend()
 # saves a filename that includes the user's selected variable name to a child directory of the current directory
 # this method of generating a unique filename and saving it to a separate location both came from a StackOverflow article in the README
 filename = "pairplot.png"
-path = "./images/"
+path = "./outputs/"
 filepath = os.path.join(path, filename)
 plt.savefig(filepath)
