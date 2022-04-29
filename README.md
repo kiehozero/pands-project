@@ -1,9 +1,12 @@
 # Programming and Scripting Assignment on Fisher's Iris Data
+
 This repository contains the scripts, output files, original datasets and supporting documentation for my project submission to the Programming and Scripting module of the HDip Computing and Analytics course at the [Atlantic Technological University](https://www.atu.ie/), Ireland.
+
 
 ## The task
 
 The research task was to use Python to research a given dataset using Python libraries of your choosing, whether covered in the course or otherwise, and document the results arising. 
+
 
 ## Dataset background and previous findings
 
@@ -14,6 +17,7 @@ Nevertheless, one article by [Yong Cui](https://towardsdatascience.com/the-iris-
 There is also an argument, summarised nicely by Timothée Poisot at [Armchair Ecology](https://armchairecology.blog/iris-dataset/), that the dataset be retired from future use due to its initial publication in a eugenics journal during the mid-1930s, and that, "parading it around in 2020 is an unacceptable endorsement of a repulsive (but still very much alive) way to subsume science under ideology" (Poisot, 2020).
 
 The data itself consists of the length and width of two separate parts of an iris flower, the petal and the sepal. Fisher and his research partner Anderson measured 150 individuals plants, and these are divided evenly between three species of iris: setosa, versicolor and virginica. The overall conclusion of the data as presented by Fisher was that while one species, iris setosa, can be distinguished from the others by assessing any of the four variables presented, there are varying degrees of uncertainty between iris versicolor and iris virginica.
+
 
 ## Working Notes
 
@@ -38,15 +42,19 @@ Similar to [histogram](histogram.py), this program uses an input to determine th
 The petal charts confirm the distinct petal variables of the setosa mentioned about in the Findings section, as well as the slight overlap between virginia and versicolor petals. The box-and-whisker also plots outlying data as individual points; setosa contains the most of these, but they still fall relatively close to the other setosa measurements, and never overlap within the expected ranges of the other species.
 
 ### [scatter](scatter.py) methodology
+
 A scatter graph allowed for the plotting of measurements based on both dimensions, as well as all unique measurements to be displayed
 >>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. 
->>> 
+>>> This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
 
 ### [summary](summary.py) methodology
+
 >>>
 
 ### [pairplot](pairplot.py) methodology
+
 >>>
+
 
 ## Software Packages
 
@@ -56,58 +64,64 @@ All analysis within this project was undertaken using Python, specifically the b
 - [pandas](https://pandas.pydata.org/) - The website describes this library as, "a fast, powerful, flexible and easy to use open source data analysis and manipulation tool."
 - [seaborn](https://seaborn.pydata.org/) - The website describes this library as, "a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics."
 
-## Operation of code
-- [analysis](analysis.py) - main script to fulfil project requirements
-- [distribution](distribution.py) - explanation of box-and-whisker, interactive element, ease of using seaborn
-- [pairplot](pairplot.py) - This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
-
 ## Bug and fixes
+
 1. The first bug I encountered was when I was attempting to plot from a CSV file. the csv.reader() function was bringing in the lengths and widths as strings instead of floating-point numbers, so it wasn't plotting the points in value order, but rather in the order that each entry was within the CSV file. I didn't find an exact solution to rectify this in csv.reader(), but going to a basic [matplotlib tutorial](https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib) provided the read_csv() function that corrected the problem.
+
 2. When the [pairplot](pairplot.py) program runs, everything operates as planned but the warning message "No handles with labels found to put in legend" is printed to the terminal. When I got this on other plots it was because I had added a legend but not given any labels; adding labels to the seaborn pairplot function results in an unexepected keyword argument error, so I have reverted the code back to the earlier warning message instead.
 
+3. Towards the end of the project I noticed that I had not included any error-handling in the user inputs. To handle any non-integer values I wrapped the existing code in try/except blocks, and added if/elif/else statements to handle any out-of-range integers.
+
+
 ## Potential improvements
+
 1. The analysis in [scatter](scatter.py) could be developed further by plotting the count of measurements as a size variable. At present, if the length and width of two or more measurements are identical, they are plotted in the same position. Using the count as a size variable here on a bubble chart would display clustered measurements in a more dynamic way than simply overlapping them.
+
 2. I wanted to use a loop in [distribution](distribution.py) to loop through the varIndex range, thus creating all four charts simultaneously rather than asking a user to select a particular chart. I attempted to create this but could only get the code the generate four charts, with the first containing only the first variable, but with the fourth containing all four variable. I have included the [png](images/dist_error.png) to better explain the output. I think looping all of these files would ultimately be preferable to a user than having to repeat the process multiple times.
+
 
 ## References
 
-### Isolating specific columns in a numPy array:
-- Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
-
-### Reading CSV files in matplotlib:
-- Tutorial Points (n.d.) Plot data from CSV file with Matplotlib. URL: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
-- W3Schools (n.d.) Matplotlib Tutorial. URL: https://www.w3schools.com/python/matplotlib_intro.asp
-
-### Plotting items by group:
-- W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
-
-### Filtering with pandas: 
-- Python and R Tips (2018) How To Filter Pandas Dataframe By Values of Column? URL: https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
-- Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
-
-### Subplots:
-- GeeksforGeeks (2021) Plot multiple plots in Matplotlib. URL: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
-
-### Formatting plots:
-- GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/
-- Matplotlib (n.d.) matplotlib.pyplot.ylabel — Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html
-
 ### Colour-blind-friendly colour palette: 
 - Color Hex (n.d.) color-blind-friendly Color Palette. URL: https://www.color-hex.com/color-palette/49436
-
-### Seaborn tutorial
-- AskPython (2020) Python Seaborn Tutorial. URL: https://www.askpython.com/python-modules/python-seaborn-tutorial
-
-### Saving files in a new location:
-- Stack Overflow (2012) filesystems - Python: how do I save a file in a different directory? URL: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
 
 ### Data source and context:
 - Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 - Machine Learning Repository: Iris Data Set (1988) University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
 - Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
 
+### Error handling in Python:
+- Python Docs (n.d.). Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
+
+### Formatting plots:
+- GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/
+- Matplotlib (n.d.) matplotlib.pyplot.ylabel — Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html
+
+### Filtering with pandas: 
+- Python and R Tips (2018) How To Filter Pandas Dataframe By Values of Column? URL: https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+- Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
+
 ### General documentation:
 - Matplotlib (n.d.) Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/3.5.1/index.html
 - NumPy (n.d.) Overview — NumPy v1.19 Manual. URL: https://numpy.org/doc/stable/
 - Pandas (n.d.) pandas 1.0.1 documentation. URL: https://pandas.pydata.org/docs/
 - Seaborn (2012) statistical data visualization — seaborn 0.9.0 documentation. URL: https://seaborn.pydata.org/
+
+### Isolating specific columns in a numPy array:
+- Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
+
+### Plotting items by group:
+- W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
+
+### Reading CSV files in matplotlib:
+- Tutorial Points (n.d.) Plot data from CSV file with Matplotlib. URL: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
+- W3Schools (n.d.) Matplotlib Tutorial. URL: https://www.w3schools.com/python/matplotlib_intro.asp
+
+### Saving files in a new location:
+- Stack Overflow (2012) filesystems - Python: how do I save a file in a different directory? URL: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
+
+### Seaborn tutorial
+- AskPython (2020) Python Seaborn Tutorial. URL: https://www.askpython.com/python-modules/python-seaborn-tutorial
+
+### Subplots:
+- GeeksforGeeks (2021) Plot multiple plots in Matplotlib. URL: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
