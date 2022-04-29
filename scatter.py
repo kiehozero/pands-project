@@ -7,15 +7,10 @@ import pandas as pd
 # file read and conversion to numPy array
 iris_csv = pd.read_csv("iris.csv")
 
-# creates a filter for each variable
-set_filter = iris_csv["species"]=="setosa"
-ver_filter = iris_csv["species"]=="versicolor"
-vir_filter = iris_csv["species"]=="virginica"
-
-# uses above filter to create standalone dataset for each variable
-set_data = iris_csv[set_filter]
-ver_data = iris_csv[ver_filter]
-vir_data = iris_csv[vir_filter]
+# creates a filtered dataset for each variable, method came from the Tutorials Point link in the README
+set_data = iris_csv[iris_csv["species"]=="setosa"]
+ver_data = iris_csv[iris_csv["species"]=="versicolor"]
+vir_data = iris_csv[iris_csv["species"]=="virginica"]
 
 # input for user to select which part they wish to see
 userInput = input("Select a flower part to view ('sepal' or 'petal'): ")
