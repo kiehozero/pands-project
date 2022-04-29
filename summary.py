@@ -5,8 +5,11 @@ import os.path
 import pandas as pd
 import seaborn as sns
 
-# file read and conversion to numPy array
+# file read
 iris_csv = pd.read_csv("iris.csv")
+
+# file to write summary data to
+file_to = "summary.txt"
 
 # number of records, max, min, mean, range, printout of all items, most of these are built-in functions in python, could be worth exploring numpy/math functions
 
@@ -20,4 +23,4 @@ set_data = iris_csv[set_filter]
 ver_data = iris_csv[ver_filter]
 vir_data = iris_csv[vir_filter]
 
-print(max(ver_data))
+print(max(ver_data["sepal_width"]))

@@ -6,7 +6,7 @@ import os.path
 import pandas as pd
 import seaborn as sns
 
-# file read and conversion to numPy array
+# file read
 iris_csv = pd.read_csv("iris.csv")
 
 # function to create and plot a box-and-whisker chart

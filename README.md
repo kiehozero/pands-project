@@ -25,27 +25,27 @@ The data itself consists of the length and width of two separate parts of an iri
 
 As expected, there will be no ground-breaking contribution to the fields of botany or biology within this GitHub repository. Within my initial investigations, a [scatter plot](https://en.wikipedia.org/wiki/Iris_flower_data_set) on the dataset's Wikipedia page provided a compact summary of this data, which I have attempted to reproduce in the [pairplot](pairplot.py) program.
 
-The various charts contained show that the subspecies setosa is easily identifiable based on petals, with minimal overlap between virginica and versicolor. This is also strong correlation between length and width of latter two, with weaker correlation for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
+The various charts contained show that the subspecies setosa is easily identifiable based on petals, with minimal overlap between virginica and versicolor. This is also strong correlation between length and width of latter two, with weaker correlation for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas, to be discussed in greater detail below. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements. Subsequently, as a measure of identifying the species, it would appear that the variables most useful for this task are, in descending order, the petal length, the petal width, the sepal length, and finally the sepal width as the least reliable variable.
 
 ### [Histogram](histogram.py) methodology
 
 Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder.
 
-The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particularly when plotting sepal data.
+The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particularly when plotting sepal data. Overlapping ranges on the histograms are of the most detriment where data is most concentrated, in the case of sepal width this is in the 2.5cm-3.5cm range.
 
 ### [Distribution](distribution.py) methodology
 
-Creating a box-and-whisker graph largely resolved the visibility issues that the [histogram](histogram.py) presented, displaying the three species without overlap on a variable-by-variable bases. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn, offering the chance to use a package not covered in the course.
+Creating a box-and-whisker graph largely resolved the visibility issues that the histogram presented, displaying the three species without overlap on a variable-by-variable basis. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn. Seaborn is both a package that has plenty of simple tutorials online, and also was not covered in the course material.
 
-Similar to [histogram](histogram.py), this program uses an input to determine the displayed variable, but packages the processes of plotting and saving the graphs within a function. Unlike the histogram, the box-and-whisker can sub-divide data based using a third variable, in this case the species, so while much of the underlying code is similar, there is no need to separate the data into three subsets before plotting onto separate charts. The boxplot function simply takes this in as an axis variable, allowing complete separation between data, but still allowing for easy comparison due to the lack of overlaid information. 
+Similar to the histogram this program uses an input to determine the displayed variable, but packages the processes of plotting and saving the graphs within a function. Unlike the histogram, the box-and-whisker can sub-divide data based using a third variable, in this case the species, so while much of the underlying code is similar, there is no need to separate the data into three subsets before plotting onto separate charts. The boxplot function simply takes this in as an axis variable, allowing complete separation between data, but still allowing for easy comparison due to the lack of overlaid information. 
 
-The petal charts confirm the distinct petal variables of the setosa mentioned about in the Findings section, as well as the slight overlap between virginia and versicolor petals. The box-and-whisker also plots outlying data as individual points; setosa contains the most of these, but they still fall relatively close to the other setosa measurements, and never overlap within the expected ranges of the other species.
+The petal charts confirm the distinct dimensions of the setosa mentioned above, as well as the slight overlap between virginia and versicolor petals. The box-and-whisker also plots outlying data as individual points; setosa contains the most of these, but they still fall relatively close to the other setosa measurements, and never overlap within the expected ranges of the other species. The sepal charts more cleanly display the significant overlaps between species than the histogram does. This is particularly helpful for sepal width, where versicolor occupies a range between 2.0cm and 3.4cm, while virginica lies between 2.2cm-3.8cm range; in the histogram this resulted in a plot that was difficult to read. Crucially, the box-and-whisker displays inter-quartile data as the focal box, with the remaining statistically-significant range as the whiskers, allowing users to pinpoint the central range of each species, reducing the ranges down to 2.5cm-3.0cm and 2.7cm-3.2cm respectively. 
 
 ### [Scatter](scatter.py) methodology
 
-A scatter graph allowed for the plotting of measurements based on both dimensions, as well as all unique measurements to be displayed
+Unlike either the histogram or the box-and-whisker chart, a scatter graph allows for the plotting of measurements based on multiple dimensions, as well more unique measurements to be displayed together. This script is purely a demonstration of [previous analysis](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_dataset_scatterplot.svg) done on this dataset, and my attempt to replicate it using the seaborn library. 
 >>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. 
->>> This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
+>>> Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
 
 ### [Summary](summary.py) methodology
 
@@ -82,47 +82,48 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ## References
 
-### Colour-blind-friendly colour palette: 
+### Colour-blind-friendly colour palette
 - Color Hex (n.d.) color-blind-friendly Color Palette. URL: https://www.color-hex.com/color-palette/49436
 
-### Data source and context:
+### Data source and context
 - Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 - Machine Learning Repository (1988) Iris Data Set. University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
 - Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
 - Wikipedia Contributors (2019). Iris flower data set. Wikipedia. URL: https://en.wikipedia.org/wiki/Iris_flower_data_set
 
-### Error handling in Python:
+### Error handling in Python
 - Python Docs (n.d.). Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
 
-### Formatting plots:
+### Formatting plots
 - GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/
 - Matplotlib (n.d.) matplotlib.pyplot.ylabel — Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html
 
-### Filtering with pandas: 
+### Filtering with pandas
 - Python and R Tips (2018) How To Filter Pandas Dataframe By Values of Column? URL: https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
 - Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
 
-### General documentation:
+### General documentation
 - Matplotlib (n.d.) Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/3.5.1/index.html
 - NumPy (n.d.) Overview — NumPy v1.19 Manual. URL: https://numpy.org/doc/stable/
 - Pandas (n.d.) pandas 1.0.1 documentation. URL: https://pandas.pydata.org/docs/
 - Seaborn (2012) statistical data visualization — seaborn 0.9.0 documentation. URL: https://seaborn.pydata.org/
 
-### Isolating specific columns in a numPy array:
+### Isolating specific columns in a numPy array
 - Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
 
-### Plotting items by group:
+### Plotting items by group
 - W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
 
-### Reading CSV files in matplotlib:
+### Reading CSV files in matplotlib
 - Tutorial Points (n.d.) Plot data from CSV file with Matplotlib. URL: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
 - W3Schools (n.d.) Matplotlib Tutorial. URL: https://www.w3schools.com/python/matplotlib_intro.asp
 
-### Saving files in a new location:
+### Saving files in a new location
 - Stack Overflow (2012) filesystems - Python: how do I save a file in a different directory? URL: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
 
-### Seaborn tutorial
+### Seaborn tutorials
 - AskPython (2020) Python Seaborn Tutorial. URL: https://www.askpython.com/python-modules/python-seaborn-tutorial
+- Seaborn Documentation (n.d.). seaborn.boxplot — seaborn 0.11.1 documentation. URL: https://seaborn.pydata.org/generated/seaborn.boxplot.html
 
-### Subplots:
+### Subplots
 - GeeksforGeeks (2021) Plot multiple plots in Matplotlib. URL: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
