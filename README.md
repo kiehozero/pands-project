@@ -49,7 +49,7 @@ Similar to the histogram program, the scatter program works by filtering the ori
 
 ### [Summary](summary.py) methodology
 
->>> This programs offers a selection of data relevant to the dataset, segmented by species, using Python's built-in mathematical functions.
+This program offers a selection of numerical data relevant to the dataset, segmented by species, using Python's built-in mathematical functions, to serve as a companion piece to the various data visualisations. The program is mostly a combination of the existing filtering and slicing options used in the earlier scripts, as well as the basic file-read and file-write techniques that were discussed in week 7 of the course. There is a definitely a million ways that this file can be optimised but I wrote it close to midnight on the 29th April so it is what it is, I don't think I've ever used print as much in my life as messing around trying to get this to print out basic information.
 
 ### [Pair-plot](pairplot.py) methodology
 
@@ -96,6 +96,8 @@ All analysis within this project was undertaken using Python, specifically the b
 ### Error handling in Python
 - Python Docs (n.d.). Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
 
+### File handling in Python
+
 ### Formatting plots
 - GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/
 - Matplotlib (n.d.) matplotlib.pyplot.ylabel — Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html
@@ -112,6 +114,10 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ### Isolating specific columns in a numPy array
 - Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
+
+### Maths in Python
+- GeeksforGeeks (2018). Python statistics | mean() function. URL: https://www.geeksforgeeks.org/python-statistics-mean-function/
+- Stack Overflow. (n.d.). integer - Python how to remove decimal? URL: https://stackoverflow.com/questions/32669400/python-how-to-remove-decimal#32669460
 
 ### Plotting items by group
 - W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
