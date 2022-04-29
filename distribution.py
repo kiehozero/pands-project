@@ -24,7 +24,6 @@ def plotter(userInput):
         path = "./images/"
         filepath = os.path.join(path, filename)
         plt.savefig(filepath)
-    
     else:
         print("Please choose a number between 1 and 4")
 

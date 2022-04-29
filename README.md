@@ -26,12 +26,12 @@ Using guidance from the initial project brief, I attempted to create a histogram
 
 ### Findings arising from [distribution](distribution.py)
 
->>> Creating a scatter graph largely resolved the visibility issues that the [histogram](histogram.py) presented
+>>> Creating a box-and-whisker graph largely resolved the visibility issues that the [histogram](histogram.py) presented, displaying the three species without overlap on a variable-by-variable bases. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn. Similar to [histogram](histogram.py), uses an input to determine whether to display the desired variable, but I have packages the processes of plotting and saving the graphs within a function; hopefully this will mean that converting this to loop through the list of variables would be a simpler task.
 
 ### Findings arising from [scatter](scatter.py)
 
 A scatter graph allowed for the plotting of measurements based on both dimensions, as well as all unique measurements to be displayed
->>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. Similar to [histogram](histogram.py), uses an input to determine whether to scatter the petal or sepal variables
+>>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. 
 >>> setosa easily identifiable based on petals, with minimal overlap between virginica and versicolor, strong correlation between length and width of latter two, not so much for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
 
 
@@ -62,7 +62,8 @@ All analysis within this project was undertaken using Python, specifically the b
 2. When the [pairplot](pairplot.py) program runs, everything operates as planned but the warning message "No handles with labels found to put in legend" is printed to the terminal. When I got this on other plots it was because I had added a legend but not given any labels; adding labels to the seaborn pairplot function results in an unexepected keyword argument error, so I have reverted the code back to the earlier warning message instead.
 
 ## Potential improvements
-1. The analysis in [distribution](distribution.py) could be developed further by plotting the count of measurements as a size variable. At present, if the length and width of two or more measurements are identical, they are plotted in the same position. Using the count as a size variable here on a bubble chart would display clustered measurements in a more dynamic way than simply overlapping them.
+1. The analysis in [scatter](scatter.py) could be developed further by plotting the count of measurements as a size variable. At present, if the length and width of two or more measurements are identical, they are plotted in the same position. Using the count as a size variable here on a bubble chart would display clustered measurements in a more dynamic way than simply overlapping them.
+2. I wanted to use a loop in [distribution](distribution.py) to loop through the varIndex range, thus creating all four charts simultaneously rather than asking a user to select a particular chart. I attempted to create this but could only get the code the generate four charts, with the first containing only the first variable, but with the fourth containing all four variable. I have included the [png](images/dist_error.png) to better explain the output. I think looping all of these files would ultimately be preferable to a user than having to repeat the process multiple times.
 
 ## References
 
