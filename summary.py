@@ -23,4 +23,14 @@ set_data = iris_csv[set_filter]
 ver_data = iris_csv[ver_filter]
 vir_data = iris_csv[vir_filter]
 
-print(max(ver_data["sepal_width"]))
+max_ver = str(max(ver_data["sepal_width"]))
+
+with open(file_to,"at") as f:
+
+    f.write(max_ver)
+
+# with open(file_to,"r") as f:
+
+#    living = f.readline()
+#    print(living)
+# )

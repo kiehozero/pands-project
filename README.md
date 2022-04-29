@@ -43,17 +43,17 @@ The petal charts confirm the distinct dimensions of the setosa mentioned above, 
 
 ### [Scatter](scatter.py) methodology
 
-Unlike either the histogram or the box-and-whisker chart, a scatter graph allows for the plotting of measurements based on multiple dimensions, as well more unique measurements to be displayed together. This script is purely a demonstration of [previous analysis](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_dataset_scatterplot.svg) done on this dataset, and my attempt to replicate it using the seaborn library. 
->>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. 
->>> Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
+Unlike either the histogram or the box-and-whisker chart, a scatter graph allows for the plotting of measurements based on multiple dimensions, as well more unique measurements to be displayed together. This view generally provides a better view of data ranges where there may be overlapping measurements within the virginica and versicolor sets, provided you choose the icons and colours carefully to avoid conflicts.
 
 ### [Summary](summary.py) methodology
 
->>>
+>>> Prints a collection of 
 
 ### [Pair-plot](pairplot.py) methodology
 
->>>
+This script is purely a demonstration of [previous analysis](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_dataset_scatterplot.svg) done on this dataset, and my attempt to replicate it using the seaborn library. Luckily the seaborn documentation in the References section includes this exact charts as one of the first examples, and it requires under ten lines of code to prepare. As it stands, this plot contains all of the previous visuals that were contained in the scatter and histogram output, and using even less code to do so.
+
+The practice of organising sixteen charts, with variable assigned along master x and y axes is an extremely effective way of viewing all data plotted together. It becomes very easy to spot which of the various variable combinations display the most or least correlation, and a simple line graph is used in place of scatter graphs where a variable would be otherwise plotted against each other (see the central top-left to bottom-right sequence). The one drawback to this view is that a dataset any larger than this, or containing more variables, might suffer from trying to fit too much into a small space.
 
 
 ## Software Packages
@@ -70,7 +70,7 @@ All analysis within this project was undertaken using Python, specifically the b
 
 2. When the [pairplot](pairplot.py) program runs, everything operates as planned but the warning message "No handles with labels found to put in legend" is printed to the terminal. When I got this on other plots it was because I had added a legend but not given any labels; adding labels to the seaborn pairplot function results in an unexepected keyword argument error, so I have reverted the code back to the earlier warning message instead.
 
-3. Towards the end of the project I noticed that I had not included any error-handling in the user inputs. To handle any non-integer values I wrapped the existing code in try/except blocks, and added if/elif/else statements to handle any out-of-range integers.
+3. Towards the end of the project I noticed that I had not included any error-handling in the user inputs. To handle any non-integer values I wrapped the existing code in try/except blocks, and added if/elif/else statements to handle any out-of-range integers. I have omitted this from the pairplot file as this does not require user input.
 
 
 ## Potential improvements
