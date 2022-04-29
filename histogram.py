@@ -1,4 +1,4 @@
-# A program that prints a summary of key information about this dataset to a .txt file
+# A program that creates a histogram for each variable and plots each species on the same axis
 
 import matplotlib.pyplot as plt
 import numpy as np

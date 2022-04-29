@@ -27,13 +27,13 @@ As expected, there will be no ground-breaking contribution to the fields of bota
 
 The various charts contained show that the subspecies setosa is easily identifiable based on petals, with minimal overlap between virginica and versicolor. This is also strong correlation between length and width of latter two, with weaker correlation for setosa. In contrast, setosa shows much stronger correlation between sepal length and width, while virginica and versicolor not only show slightly less correlation between length and width, but they also show significant overlap in these areas. On the whole virginica is larger, with about 25% of measurements larger than any of the versicolor measurements
 
-### [histogram](histogram.py) methodology
+### [Histogram](histogram.py) methodology
 
 Using guidance from the initial project brief, I attempted to create a histogram that would display the distribution of measurements by variable. I used the pandas read_csv function and the numPy array function, and then created a unique dataset for each species by filtering and slicing the original dataset, and assigning this to a new variable. A user-inputted selection determines the variable to be plotted, a filename is determined based on this selection, and os.path.join is used to add the completed plot to the images sub-folder.
 
 The histograms are probably best used when plotting a single variable, or multiple-variables that do not overlap, but I found that I had to customise the settings of the plots (see the Geeksforgeeks article in the Formatting Plots section of the References below) to get overlapping data even remotely visible, particularly when plotting sepal data.
 
-### [distribution](distribution.py) methodology
+### [Distribution](distribution.py) methodology
 
 Creating a box-and-whisker graph largely resolved the visibility issues that the [histogram](histogram.py) presented, displaying the three species without overlap on a variable-by-variable bases. The inspiration for this view came from a work project I was involved in recently, and a quick Google found that box-and-whisker plots were a fairly standard graph within seaborn, offering the chance to use a package not covered in the course.
 
@@ -41,17 +41,17 @@ Similar to [histogram](histogram.py), this program uses an input to determine th
 
 The petal charts confirm the distinct petal variables of the setosa mentioned about in the Findings section, as well as the slight overlap between virginia and versicolor petals. The box-and-whisker also plots outlying data as individual points; setosa contains the most of these, but they still fall relatively close to the other setosa measurements, and never overlap within the expected ranges of the other species.
 
-### [scatter](scatter.py) methodology
+### [Scatter](scatter.py) methodology
 
 A scatter graph allowed for the plotting of measurements based on both dimensions, as well as all unique measurements to be displayed
 >>> removed numPy from above so could use column references instead of slicing columns after the header and making the more code less difficult to read. 
 >>> This script is purely a demonstration of previous analysis done on this dataset, and my attempt to replicate it using the seaborn library. Utilises pandas to prepare data, seaborn to access more advanced visuals, and matplot to actually create them
 
-### [summary](summary.py) methodology
+### [Summary](summary.py) methodology
 
 >>>
 
-### [pairplot](pairplot.py) methodology
+### [Pair-plot](pairplot.py) methodology
 
 >>>
 
@@ -87,8 +87,9 @@ All analysis within this project was undertaken using Python, specifically the b
 
 ### Data source and context:
 - Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
-- Machine Learning Repository: Iris Data Set (1988) University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
+- Machine Learning Repository (1988) Iris Data Set. University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
 - Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
+- Wikipedia Contributors (2019). Iris flower data set. Wikipedia. URL: https://en.wikipedia.org/wiki/Iris_flower_data_set
 
 ### Error handling in Python:
 - Python Docs (n.d.). Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
