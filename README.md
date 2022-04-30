@@ -117,8 +117,9 @@ All analysis within this project was undertaken using Python, specifically the b
 - Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
 
 ### Maths in Python
-- GeeksforGeeks (2018). Python statistics | mean() function. URL: https://www.geeksforgeeks.org/python-statistics-mean-function/
-- Stack Overflow. (n.d.). integer - Python how to remove decimal? URL: https://stackoverflow.com/questions/32669400/python-how-to-remove-decimal#32669460
+- GeeksforGeeks (2017) max() and min() in Python. URL: https://www.geeksforgeeks.org/max-min-python/
+- GeeksforGeeks (2018) Python statistics | mean() function. URL: https://www.geeksforgeeks.org/python-statistics-mean-function/
+- Stack Overflow. (n.d.) integer - Python how to remove decimal? URL: https://stackoverflow.com/questions/32669400/python-how-to-remove-decimal#32669460
 
 ### Plotting items by group
 - W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
