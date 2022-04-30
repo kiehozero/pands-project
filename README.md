@@ -49,7 +49,7 @@ Similar to the histogram program, the scatter program works by filtering the ori
 
 ### [Summary](summary.py) methodology
 
-This program offers a selection of numerical data relevant to the dataset, segmented by species, using Python's built-in mathematical functions, to serve as a companion piece to the various data visualisations. The program is mostly a combination of the existing filtering and slicing options used in the earlier scripts, as well as the basic file-read and file-write techniques that were discussed in week 7 of the course. There is a definitely a million ways that this file can be optimised but I wrote it close to midnight on the 29th April so it is what it is, I don't think I've ever used print as much in my life as messing around trying to get this to print out basic information.
+This program offers a selection of numerical data relevant to the dataset, segmented by species, using Python's built-in mathematical functions, to serve as a companion piece to the various data visualisations. The program is mostly a combination of the existing filtering and slicing options used in the earlier scripts, as well as the basic file-read and file-write techniques that were discussed in week 7 of the course. There is a definitely a million ways that this file can be optimised but I wrote it at midnight on the 29th April so it is what it is, I don't think I've ever used print as much in my life as messing around trying to get this to print out basic information.
 
 ### [Pair-plot](pairplot.py) methodology
 
@@ -91,12 +91,13 @@ All analysis within this project was undertaken using Python, specifically the b
 - Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 - Machine Learning Repository (1988) Iris Data Set. University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
 - Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
-- Wikipedia Contributors (2019). Iris flower data set. Wikipedia. URL: https://en.wikipedia.org/wiki/Iris_flower_data_set
+- Wikipedia Contributors (2019) Iris flower data set. Wikipedia. URL: https://en.wikipedia.org/wiki/Iris_flower_data_set
 
 ### Error handling in Python
-- Python Docs (n.d.). Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
+- Python Docs (n.d.) Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
 
 ### File handling in Python
+- W3schools (2019) Python File Write. URL: https://www.w3schools.com/python/python_file_write.asp
 
 ### Formatting plots
 - GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/

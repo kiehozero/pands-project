@@ -30,27 +30,36 @@ varIndex = [
     "sepal_width"
     ]
 
-# the loop below goes through each 
-with open(file_to,"wt") as f:
+# there is absolutely no way on earth this is the best way to retrieve the name of the dataset I'm using, but it is all I can think of
+setname = ["setosa", "versicolor", "virginica"]
 
-    for d in datasets.values():
-        for v in varIndex:
-            # displays column name and max value
-            f.write(str(f"DATASET NAME HERE {v} - Max: "))
-            f.write(
-                str(min(d[v]))
-            )
-            # displays column name and min value
-            f.write(", Min: ")
-            f.write(
-                str(max(d[v]))
-            )
-            # displays range value, see README reference for StackOverflow link on truncating decimals
-            range = max(d[v]) - min(d[v])
-            f.write(", Range: {:1f}".format(range))
-            # displays mean value, see README reference for Geeksforgeeks article on mean function
-            mean_ave = statistics.mean(d[v])
-            f.write(f". Mean: {mean_ave}")
-            f.write(f";\n")
-        # adds new line to separate species
-        f.write(f"\n")
+# the loop below goes through each 
+with open(file_to, "wt") as f:
+
+    counter = 0
+    while counter < 3:
+        for d in datasets.values():
+            # uses value of counter to return value of setname list
+            setInUse = setname[counter]
+            print(counter)
+            for v in varIndex:
+                # displays column name and max value
+                f.write(str(f"{setInUse} {v} - Max: "))
+                f.write(
+                    str(min(d[v]))
+                )
+                # displays column name and min value
+                f.write(", Min: ")
+                f.write(
+                    str(max(d[v]))
+                )
+                # displays range value, see README reference for StackOverflow link on truncating decimals
+                range = max(d[v]) - min(d[v])
+                f.write(", Range: {:1f}".format(range))
+                # displays mean value, see README reference for Geeksforgeeks article on mean function
+                mean_ave = statistics.mean(d[v])
+                f.write(f". Mean: {mean_ave}")
+                f.write(f";\n")
+            # adds new line to separate species
+            f.write(f"\n")
+            counter += 1
