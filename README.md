@@ -2,11 +2,9 @@
 
 This repository contains the scripts, output files, original datasets and supporting documentation for my project submission to the Programming and Scripting module of the HDip Computing and Analytics course at the [Atlantic Technological University](https://www.atu.ie/), Ireland.
 
-
 ## The task
 
 The research task was to use Python to research a given dataset using Python libraries of your choosing, whether covered in the course or otherwise, and document the results arising. 
-
 
 ## Dataset background and previous findings
 
@@ -17,7 +15,6 @@ Nevertheless, one article by [Yong Cui](https://towardsdatascience.com/the-iris-
 There is also an argument, summarised nicely by Timothée Poisot at [Armchair Ecology](https://armchairecology.blog/iris-dataset/), that the dataset be retired from future use due to its initial publication in a eugenics journal during the mid-1930s, and that, "parading it around in 2020 is an unacceptable endorsement of a repulsive (but still very much alive) way to subsume science under ideology" (Poisot, 2020).
 
 The data itself consists of the length and width of two separate parts of an iris flower, the petal and the sepal. Fisher and his research partner Anderson measured 150 individuals plants, and these are divided evenly between three species of iris: setosa, versicolor and virginica. The overall conclusion of the data as presented by Fisher was that while one species, iris setosa, can be distinguished from the others by assessing any of the four variables presented, there are varying degrees of uncertainty between iris versicolor and iris virginica.
-
 
 ## Working Notes
 
@@ -57,7 +54,6 @@ This script is purely a demonstration of [previous analysis](https://en.wikipedi
 
 The practice of organising sixteen charts, with variable assigned along master x and y axes is an extremely effective way of viewing all data plotted together. It becomes very easy to spot which of the various variable combinations display the most or least correlation, and a simple line graph is used in place of scatter graphs where a variable would be otherwise plotted against each other (see the central top-left to bottom-right sequence). The one drawback to this view is that a dataset any larger than this, or containing more variables, might suffer from trying to fit too much into a small space.
 
-
 ## Software Packages
 
 All analysis within this project was undertaken using Python, specifically the below libraries:
@@ -66,7 +62,7 @@ All analysis within this project was undertaken using Python, specifically the b
 - [pandas](https://pandas.pydata.org/) - The website describes this library as, "a fast, powerful, flexible and easy to use open source data analysis and manipulation tool."
 - [seaborn](https://seaborn.pydata.org/) - The website describes this library as, "a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics."
 
-## Bug and fixes
+## Bugs and fixes
 
 1. The first bug I encountered was when I was attempting to plot from a CSV file. the csv.reader() function was bringing in the lengths and widths as strings instead of floating-point numbers, so it wasn't plotting the points in value order, but rather in the order that each entry was within the CSV file. I didn't find an exact solution to rectify this in csv.reader(), but going to a basic [matplotlib tutorial](https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib) provided the read_csv() function that corrected the problem.
 
@@ -74,40 +70,45 @@ All analysis within this project was undertaken using Python, specifically the b
 
 3. Towards the end of the project I noticed that I had not included any error-handling in the user inputs. To handle any non-integer values I wrapped the existing code in try/except blocks, and added if/elif/else statements to handle any out-of-range integers. I have omitted this from the pairplot file as this does not require user input.
 
-
 ## Potential improvements
 
 1. The analysis in [scatter](scatter.py) could be developed further by plotting the count of measurements as a size variable. At present, if the length and width of two or more measurements are identical, they are plotted in the same position. Using the count as a size variable here on a bubble chart would display clustered measurements in a more dynamic way than simply overlapping them.
 
 2. I wanted to use a loop in [distribution](distribution.py) to loop through the varIndex range, thus creating all four charts simultaneously rather than asking a user to select a particular chart. I attempted to create this but could only get the code the generate four charts, with the first containing only the first variable, but with the fourth containing all four variable. I have included the [png](outputs/dist_error.png) to better explain the output. I think looping all of these files would ultimately be preferable to a user than having to repeat the process multiple times.
 
-
 ## References
 
 ### Colour-blind-friendly colour palette
+
 - Color Hex (n.d.) color-blind-friendly Color Palette. URL: https://www.color-hex.com/color-palette/49436
 
 ### Data source and context
+
 - Cui, Y. (2020) The Iris Dataset — A Little Bit of History and Biology. Medium. URL: https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 - Machine Learning Repository (1988) Iris Data Set. University of California at Irvine. URL: https://archive.ics.uci.edu/ml/datasets/iris
 - Poissot, T. (2020) It’s time to retire the iris dataset. Armchair Ecology. URL: https://armchairecology.blog/iris-dataset/
 - Wikipedia Contributors (2019) Iris flower data set. Wikipedia. URL: https://en.wikipedia.org/wiki/Iris_flower_data_set
 
 ### Error handling in Python
+
 - Python Docs (n.d.) Built-in Exceptions — Python 3.8.2 documentation. URL: https://docs.python.org/3/library/exceptions.html
 
 ### File handling in Python
+
 - W3schools (2019) Python File Write. URL: https://www.w3schools.com/python/python_file_write.asp
 
 ### Formatting plots
+
 - GeeksforGeeks (2020) How to plot two histograms together in Matplotlib? URL: https://www.geeksforgeeks.org/how-to-plot-two-histograms-together-in-matplotlib/
 - Matplotlib (n.d.) matplotlib.pyplot.ylabel — Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html
 
 ### Filtering with pandas
+
 - Python and R Tips (2018) How To Filter Pandas Dataframe By Values of Column? URL: https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
 - Tutorials Point (n.d.) Filter the rows – Python Pandas. URL: https://www.tutorialspoint.com/filter-the-rows-python-pandas
 
 ### General documentation
+
 - Matplotlib (n.d.) Matplotlib 3.5.1 documentation. URL: https://matplotlib.org/3.5.1/index.html
 - NumPy (n.d.) Overview — NumPy v1.19 Manual. URL: https://numpy.org/doc/stable/
 - Pandas (n.d.) pandas 1.0.1 documentation. URL: https://pandas.pydata.org/docs/
@@ -117,23 +118,29 @@ All analysis within this project was undertaken using Python, specifically the b
 - Zach (2021) How to Get Specific Column from NumPy Array. Statology. URL: https://www.statology.org/numpy-get-column/
 
 ### Maths in Python
+
 - GeeksforGeeks (2017) max() and min() in Python. URL: https://www.geeksforgeeks.org/max-min-python/
 - GeeksforGeeks (2018) Python statistics | mean() function. URL: https://www.geeksforgeeks.org/python-statistics-mean-function/
 - Stack Overflow. (n.d.) integer - Python how to remove decimal? URL: https://stackoverflow.com/questions/32669400/python-how-to-remove-decimal#32669460
 
 ### Plotting items by group
+
 - W3Schools (n.d.) Matplotlib Scatter. URL: https://www.w3schools.com/python/matplotlib_scatter.asp
 
 ### Reading CSV files in matplotlib
+
 - Tutorial Points (n.d.) Plot data from CSV file with Matplotlib. URL: https://www.tutorialspoint.com/plot-data-from-csv-file-with-matplotlib
 - W3Schools (n.d.) Matplotlib Tutorial. URL: https://www.w3schools.com/python/matplotlib_intro.asp
 
 ### Saving files in a new location
+
 - Stack Overflow (2012) filesystems - Python: how do I save a file in a different directory? URL: https://stackoverflow.com/questions/13825719/python-how-do-i-save-a-file-in-a-different-directory
 
 ### Seaborn tutorials
+
 - AskPython (2020) Python Seaborn Tutorial. URL: https://www.askpython.com/python-modules/python-seaborn-tutorial
 - Seaborn Documentation (n.d.). seaborn.boxplot — seaborn 0.11.1 documentation. URL: https://seaborn.pydata.org/generated/seaborn.boxplot.html
 
 ### Subplots
+
 - GeeksforGeeks (2021) Plot multiple plots in Matplotlib. URL: https://www.geeksforgeeks.org/plot-multiple-plots-in-matplotlib/
